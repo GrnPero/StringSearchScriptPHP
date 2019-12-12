@@ -1,0 +1,29 @@
+<?php
+    // Placeholder for testing
+    $ip="10.0.0.1";
+    // Hostname variable to output in the web browser
+    $hn="";
+
+    // Filename is hostname, r stands for read
+    $myfile  = fopen("hostname", "r") or die ("Unable to open 'hostname' file!");
+
+    // Inputs the file into an array
+    $array = explode("\n", fread($myfile, filesize("hostname")));
+    
+    // Testing purposes displays everything in the array
+    //foreach ($array as $item) {
+    //    echo $item;
+    //}
+
+    // Grabs the number of items in the file -1 for the array
+    $y = filesize("hostname") - 1;
+
+    // Counts the string
+
+    //test it
+    echo $y;
+
+    // Iterates the array and compares the string specified if found get the string before it and output it
+    //for ($i = 0; $i < 
+    fclose($myfile);
+?>

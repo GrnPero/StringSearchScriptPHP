@@ -1,0 +1,50 @@
+<?php
+    // Placeholder for testing
+    $ip="10.0.0.1";
+    // Hostname variable to output in the web browser
+    $hn="";
+
+    // Filename is hostname, r stands for read
+    $myfile  = fopen("hostname", "r") or die ("Unable to open 'hostname' file!");
+    // Counter for the for loop for number of items in the file
+    //$files = filesize("hostname");
+
+    // Count number of strings from the files variable (counts based on whitespaces)
+    //$stringNum = strlen($files);
+
+    // Testing the filesize variable
+    //echo $stringNum;
+
+    // Outputs a space
+    //echo " ";
+
+    // Places the whole file in a variable
+    //$fileContents = fread($myfile, filesize("hostname"));
+
+    // Outputs the file for testing purposes
+    //echo fread($myfile, filesize("hostname"));
+
+    // Use this variable to iterate through the variable 
+    //echo $fileContents;
+
+    // This for loop grabs the number of strings in a file and outputs the hostname based on the ip address
+    /*
+    for ($i = 1; $i <= $stringNum; $i++) {
+	// Matches the ip address with the one specified
+	if ($ip_addr == fread($myfile, $i)) {
+		$i--;
+		echo fread($myfile, $i);
+	}
+    }
+     */
+
+    // Inputs the file into an array
+    $array = explode("\n", fread($myfile, filesize("hostname")));
+    
+
+    foreach ($array as $item) {
+        echo $item;
+    }
+
+    fclose($myfile);
+?>
